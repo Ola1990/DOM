@@ -49,3 +49,31 @@ newH6.innerText = "Zawartość haszóstki";
 var firstElem = rodzic2.firstElementChild;
 
 rodzic2.insertBefore(newH6, firstElem); //element, ktory wstawiamy i element przed którym go wstawiamy
+
+
+
+var tytul = document.getElementsByTagName("h1")[0];
+
+tytul.innerHTML = "Nowa zawartość";  //w h1 zmieniamy zawartość
+console.log( tytul.innerHTML ); //zwraca w konsoli zawartość h1
+console.log( tytul.outerHTML ); //zwraca w konsoli całą h1
+console.log( tytul.innerText ); //zwraca zawartość h1 bez znaczników
+
+
+
+var linki = document.getElementsByTagName("a");
+for( var i = 0; i < linki.length; i++) {
+    console.log(linki[i].href); 
+    console.log(linki[i].className); 
+    if(i % 2 == 0){
+        //classList.add dodaje klase
+        //classList.remove usuwa klase
+        linki[i].classList.add("decor-link");  //parzyste
+    }else {
+        linki[i].style.color = "red";   //nieparzyste
+        linki[i].style.textDecoration = "none";
+        linki[i].style.border = "2px dotted #000";
+    }
+}
+
+
